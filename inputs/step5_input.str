@@ -1,0 +1,9 @@
+set a 100.000000
+set b 100.000000
+set c 185.000000
+set boxtype rect
+set xtltype tetragonal
+set alpha 90.0
+set beta 90.0
+set gamma 90.0
+set zcen 0.0
