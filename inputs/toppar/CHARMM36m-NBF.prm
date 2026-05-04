@@ -1,0 +1,57 @@
+* NBFIX parameters for cation-pi interactions (CHARMM36m-NBF)
+* between toluene-NH4/TMA and 3-methyl-indole-NH4/TMA
+* also for phenylalanine,tryptophan-lysine/TMA
+*
+!references
+!
+!Han Liu, Haohao Fu, Xueguang Shao, Wensheng Cai, and Christophe Chipot.
+!"Accurate Description of Cation-pi interactions in proteins with a Nonpolarizable Force
+!Field at No Additional Cost"  J. Chem. Theory Comput. 2020, 16, 6397-6407
+!Han Liu, Haohao Fu, Christophe Chipot, Xueguang Shao, and Wensheng Cai.
+!"Accuracy of Alternate Nonpolarizable Force Fields for the DetAccuracy of Alternate Nonpolarizable 
+!Force Fields for the Determination of Protein¨CLigand Binding Affinities Dominated by Cation-pi 
+!interactions"  J. Chem. Theory Comput. 2021, 17, 3908-3915
+
+
+* NBFIX parameters for cation-pi
+*
+
+NBFIX
+!========================================================================================================
+!!! NBFIX for cation-pi between phenylalanine/tryptophan-lysine, protein-protein
+!!========================================================================================================
+CPT    NH3      -0.80000    3.20 
+CAI    NH3      -0.70000    3.20 
+CA     NH3      -0.70000    3.30 
+!========================================================================================================
+!!! NBFIX for cation-pi between phenylalanine/tryptophan-TMA, protein-CGenFF
+!!========================================================================================================
+CPT    NG3P0    -0.14000    3.70 
+CAI    NG3P0    -0.24000    3.80 
+CA     NG3P0    -0.28300    3.90 
+CPT    CG334    -0.09000    4.00 
+CAI    CG334    -0.20000    4.20 
+CA     CG334    -0.25500    4.00 
+!========================================================================================================
+!!! NBFIX for cation-pi between toluene/3-methyl-indole-lysine, CGenFF-protein
+!!========================================================================================================
+CG2R61  NH3     -0.70000   3.30
+CG2RC0  NH3     -0.80000   3.20
+!========================================================================================================
+!!! NBFIX for cation-pi between toluene/3-methyl-indole-TMA, CGenFF-CGenFF
+!!========================================================================================================
+CG2R61  NG3P0   -0.28300   3.90
+CG2R61  CG334   -0.25500   4.00
+CG2RC0  NG3P0   -0.14000   3.70
+CG2RC0  CG334   -0.09000   4.00
+!========================================================================================================
+!!! NBFIX for cation-pi between phenylalanine/tryptophan-lipid choline group, protein-lipid
+!!========================================================================================================
+CPT    NTL      -0.14000    3.70
+CAI    NTL      -0.24000    3.80
+CA     NTL      -0.28300    3.90
+CPT    CTL5     -0.09000    4.00
+CAI    CTL5     -0.20000    4.20
+CA     CTL5     -0.25500    4.00 
+
+END

@@ -1,0 +1,86 @@
+colvarsTrajFrequency	2000
+colvarsRestartFrequency	20000
+
+colvar {
+       name	tilt
+       
+       tilt {
+		axis	(0.0,0.0,-1.0)
+		   atoms {
+		   	 psfSegID	PROA
+			 atomNameResidueRange	CA 1-296
+			 }
+			 refpositionsfile ../step5_input.pdb
+		 }
+	 }
+		   
+
+colvar {
+       name	r
+       width 0.5
+       lowerboundary	-80
+       upperboundary	-65
+#       lowerboundary	-35
+#       upperboundary	-85
+       reflectingLowerboundary	on
+       reflectingUpperboundary	on
+       extendedLagrangian	on
+       extendedFluctuation	.5
+       extendedTimeConstant	400
+       distanceZ {
+       		 main {
+	  	    psfSegID	PROA
+		    atomNameResidueRange	CA 1-296
+			}
+		 ref  {
+		    psfSegID	MEMB
+		    atomNameResidueRange	P 1-260
+			}
+		}
+	}
+
+harmonic {
+	 colvars	tilt
+	 centers	1.0
+ 	 forceConstant	1000.0
+}
+
+abf {
+    name abf1
+    colvars r
+    fullsamples 50000
+    outputFreq	10000
+    historyfreq	10000
+    hideJacobian	off
+    writeCZARwindowfile	yes
+    }
+
+metadynamics {
+	     name meta
+	     colvars r
+	     hillWeight 0.3
+	     newHillFrequency 1000
+	     hillWidth	      3.0
+	     wellTempered     on
+	     biasTemperature  4000
+	     }
+
+colvar {
+       name     membCOM
+       distanceZ {
+                 main {
+                       psfsegid         MEMB
+		       atomNameResidueRange     P       1-260
+		       }
+                 ref {
+                       dummyAtom        (0,0,-19.65)
+		       }
+	       }
+       }
+
+harmonic {
+	 colvars membCOM
+	 centers 0.0
+	 forceConstant	1000
+	 }
+	 

@@ -1,0 +1,18 @@
+colvarsTrajFrequency	2000
+colvarsRestartFrequency	20000
+
+colvar {
+       name	tilt
+       tilt {
+       	    axis (0.0, 0.0, -1.0)
+	    	 atoms {
+		       psfsegID	PROA
+		       atomNameResidueRange	CA 1-296
+		       }
+		       refpositionsfile step5_input.pdb
+	       }
+       }
+
+
+
+		       
