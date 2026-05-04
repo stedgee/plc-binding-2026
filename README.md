@@ -6,4 +6,4 @@ inputs directory contains NAMD config, Colvars config, necessary parameter and t
 
 Separation inputs are broken down by window of PMF (15 Angstrom each).
 
-/home/gees/NAMD_3.0_Linux-x86_64-multicore-CUDA/namd3
+NAMD_3.0_Linux-x86_64-multicore-CUDA
